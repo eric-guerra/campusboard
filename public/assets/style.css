@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.5 "Helvetica Neue", Arial, sans-serif; color: #222; background: #f4f5f7; }
+a { color: #c8102e; }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background: #c8102e; color: #fff; }
+.topbar a, .topbar .link { color: #fff; margin-left: 16px; text-decoration: none; }
+.brand { font-weight: bold; font-size: 20px; margin-left: 0 !important; }
+.container { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+.btn, button { display: inline-block; padding: 8px 14px; border: 0; border-radius: 4px; background: #222; color: #fff; cursor: pointer; text-decoration: none; font: inherit; }
+.topbar .btn { background: #fff; color: #c8102e; }
+button.link { background: none; padding: 0; }
+button.danger { background: #b00020; }
+.inline { display: inline; }
+.search { display: flex; gap: 8px; margin-bottom: 8px; }
+.search input { flex: 1; }
+input, select, textarea { padding: 8px; border: 1px solid #ccc; border-radius: 4px; font: inherit; width: 100%; }
+.search select { width: auto; }
+.cards { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.card a { display: block; padding: 14px; background: #fff; border-radius: 6px; color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.card a:hover { box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.card strong { display: block; margin: 4px 0; }
+.price { color: #2e7d32; font-weight: bold; }
+.price.big { font-size: 24px; }
+.meta, .muted { color: #777; font-size: 13px; }
+.stack { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.stack.narrow { max-width: 360px; }
+.error { color: #b00020; font-size: 13px; }
+.badge { display: inline-block; background: #777; color: #fff; padding: 2px 8px; border-radius: 10px; }
+.table { width: 100%; border-collapse: collapse; background: #fff; }
+.table th, .table td { padding: 8px; border-bottom: 1px solid #eee; text-align: left; }
+.pager a { margin-right: 6px; }
+.pager .current { font-weight: bold; text-decoration: none; color: #222; }
+.listing .body { background: #fff; padding: 16px; border-radius: 6px; }
