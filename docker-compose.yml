@@ -1,0 +1,25 @@
+services:
+  web:
+    image: php:8.2-apache
+    ports: ["8000:80"]
+    volumes:
+      - ./:/var/www/campusboard
+    environment:
+      DB_DSN: mysql:host=db;dbname=campusboard;charset=utf8mb4
+      DB_USER: campusboard
+      DB_PASS: campusboard
+      APACHE_DOCUMENT_ROOT: /var/www/campusboard/public
+    command: >
+      bash -c "docker-php-ext-install pdo_mysql >/dev/null &&
+               sed -ri 's!/var/www/html!/var/www/campusboard/public!g' /etc/apache2/sites-available/*.conf &&
+               a2enmod rewrite >/dev/null && apache2-foreground"
+    depends_on: [db]
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: campusboard
+      MYSQL_USER: campusboard
+      MYSQL_PASSWORD: campusboard
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
